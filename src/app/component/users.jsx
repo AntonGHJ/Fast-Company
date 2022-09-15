@@ -8,13 +8,15 @@ import User from "./user";
 
 const Users = ()=> {
    
-    const [users, setUsers] = useState(api.users.fetchAll()) 
+    const [users, setUsers] = useState(api.users.fetchAll())
+      
+    console.log(users) 
 
     const [tableHead, setTableHead] = useState(['Имя', 'Качества', 'Профессия', 'Встретился, раз', 'Оценка'])
     if (users.length > 0)
         { return (  
         <>     
-        <div> <RenderPhrase/> </div>       
+        <div> <RenderPhrase length = {users.length}/> </div>       
         <table className="table m-2">        
     <thead>    
       <tr>
@@ -25,6 +27,7 @@ const Users = ()=> {
     </thead>
     <tbody>
         <User/>
+        
     </tbody>
   </table>
   </>

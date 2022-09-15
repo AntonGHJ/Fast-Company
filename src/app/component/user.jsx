@@ -10,17 +10,15 @@ const User = () => {
     const handleDelete = (id) => {
         setUsers(prevState=>prevState.filter(user=>user!==id))
         setUsersLength(usersLength-1)  
-        console.log(usersLength)
-         
+        console.log(usersLength) 
     }
    
     return  (
-    users.map(user=> 
-               
-        { return  (
-           
-        <>
-           
+    users.map(user=>                
+        { return  (           
+            
+        <>           
+        
             <tr>
                 <td>{user.name}</td>
                 <td>{
@@ -41,7 +39,6 @@ const User = () => {
                 </td>
             </tr>                
         </>
-        
         )}
     ))
 }

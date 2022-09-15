@@ -3,18 +3,15 @@ import api from "../api"
 import User from "./user"
 import Users from "./users"
 
-
-
-const RenderPhrase = () => {    
-    const [users, setUsers] = useState(api.users.fetchAll()) 
+const RenderPhrase = (props) => {    
     
-///
+    const [users, setUsers] = useState(props)
+    console.log(props)
     
-////
-    if (users.length > 4 && users.length <= 12)
+    if (props.length > 4 && props.length <= 12)
     
     {return (
-    < h1 ><span className="badge m-2 bg-primary">{users.length} человек тусанут с тобой</span></h1>
+    < h1 ><span className="badge m-2 bg-primary">{props.length} человек тусанут с тобой</span></h1>
      )
     }
     if (users.length > 1 && users.length < 5) {return  (
